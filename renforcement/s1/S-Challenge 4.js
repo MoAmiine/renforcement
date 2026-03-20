@@ -18,7 +18,6 @@ articles.forEach(article => {
 const TVA = sousTotal * 0.20;
 const totalTTC = sousTotal + TVA;
 
-console.log("------------------");
 console.log(`Sous-total : ${sousTotal}€`);
 console.log(`TVA (20%) : ${TVA}€`);
 console.log(`Total TTC : ${totalTTC}€`);
