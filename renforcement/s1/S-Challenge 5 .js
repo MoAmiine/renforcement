@@ -20,6 +20,6 @@ function chercherEtudiant(nom) {
   if (trouve) {
     console.log(trouve);
   } else {
-    console.log("not found");
+    console.log("Étudiant non trouvé");
   }
 }
