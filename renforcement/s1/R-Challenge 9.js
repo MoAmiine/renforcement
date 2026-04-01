@@ -41,8 +41,56 @@ function meilleurTaux(montant, deviseSource){
         let resultat = convertir(montant, deviseSource, devise)
 
         console.log(
-            montant, deviseSource, "=" ,resultat, devise
+            montant, deviseSource, "=" ,resultat.toFixed(2), devise
         )
     }
+}
+
+function afficherHistorique(){
+    historique.forEach(item => {
+        console.log(
+            item.date, 
+            "-", 
+            item.montant, 
+            item.deviseSource, 
+            "->", 
+            item.resultat.toFixed(2), 
+            item.deviseCible
+        )
+    })
+}
+
+function devisePlusDemandee(){
+    let compteur = {}
+    historique.forEach(item => {
+        let devise = item.deviseCible
+        if(!compteur[devise]){
+            compteur[devise] = 0
+        }
+        compteur[devise]++
+    })
+    console.log(compteur)
+}
+
+function montantTotalConverti(){
+    let total = 0
+    historique.forEach(item => {
+        total = total + item.montant
+    })
+    return total
+}
+
+function conversionPlusFrequente(){
+    let compteur = {}
+    historique.forEach(element => {
+        let conversion = element.deviseSource + "-" + element.deviseCible
+
+        if(!compteur[conversion]){
+            compteur[conversion] = 0
+        }
+        compteur[conversion]++
+    });
+
+    console.log(compteur)
 }
 
