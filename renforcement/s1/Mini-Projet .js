@@ -64,3 +64,24 @@ function publierAnnonce(venderId, titre, description, prix, categorie, etat){
     console.log("Annonce publiee")
     console.log(annonces)
 }
+
+function modifierPrix(annonceId, nouveauPrix){
+    let annonce = annonces.find(a => a.id == annonceId)
+
+    if(!annonce){
+        console.log('annoce introuvable');
+    }
+    annonce.prix = nouveauPrix
+
+    console.log("Prix modfiee")
+}
+
+function retirerAnnonce(annonceId){
+    let annonce = annonce.find(a => a.id == annonceId)
+    if(!annonce){
+        console.log('annonce retire');
+    }
+    annonce.statut = "retire"
+    console.log("annonce retire");
+    
+}
