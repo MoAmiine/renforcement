@@ -36,5 +36,13 @@ function convertirPanier(panier, deviseSource, deviseCible){
     return panierConverti
 }
 
+function meilleurTaux(montant, deviseSource){
+    for(let devise in taux){
+        let resultat = convertir(montant, deviseSource, devise)
 
+        console.log(
+            montant, deviseSource, "=" ,resultat, devise
+        )
+    }
+}
 
