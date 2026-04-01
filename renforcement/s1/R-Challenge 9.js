@@ -26,5 +26,15 @@ function convertir(montant, deviseSource, deviseCible){
 convertir(10, 'EUR', 'JPY')
 console.log(historique)
 
+function convertirPanier(panier, deviseSource, deviseCible){
+    let panierConverti = []
+
+    panier.forEach(prix => {
+        let nouveauPrix = convertir(prix, deviseSource, deviseCible)
+        panierConverti.push(nouveauPrix)
+    })
+    return panierConverti
+}
+
 
 
