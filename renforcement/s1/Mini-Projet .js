@@ -41,3 +41,26 @@ solde: 600
 }
 ]
 
+let annonces = []
+
+function publierAnnonce(venderId, titre, description, prix, categorie, etat){
+    let vendeur = utilisateurs.find(user => user.id === venderId)
+    if(vendeur.role !== "vendeur"){
+        console.log("seul un vendeur peut publier");
+        return
+    }
+    let annonce = {
+        id: annonces.length + 1,
+        vendeur_id: vendeurId,
+        titre: titre, 
+        description: description,
+        categorie: categorie,
+        etat: etat,
+        statut: "disponible", 
+        date_publication: new Date()
+    }
+
+    annonces.push(annonce)
+    console.log("Annonce publiee")
+    console.log(annonces)
+}
