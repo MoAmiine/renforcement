@@ -117,7 +117,36 @@ publierAnnonce(
 console.log(annonces)
 
 function rechercher(mot){
-    let resultat = annonces.filter(a => a.titre.includes(mot))
-
+    let resultat = annonces.filter(a => a.titre.includes(mot) || a.description.includes(mot))
     console.log(resultat)
+}
+
+let transactions = []
+
+function acheter(acheteurId, annonceId){
+    let acheteur = utilisateurs.find(u => u.id === acheteurId)
+    let annonce = annonces.find(a => a.id === annonceId)
+
+    if(annonce.statut !== "disponible"){
+        console.log("indisponible")
+        return
+    }
+    if(acheteur.solde < annonce.prix){
+        console.log("pas assez d'argent");
+        return
+    }
+    let vendeur = utilisateurs.find(
+        u => u.id === annonce.vendeurId
+    )
+    let commission = annonce.prix * 0.05
+    acheteur.solde -= annonce.prix
+    vendeur.solde +=annonce.prix - commission
+
+    annonce.statut = "vendu"
+
+    transactions.push({
+        acheteurId, 
+        venderId: vendeur.id,
+        prix: annonce.prix
+    })
 }
