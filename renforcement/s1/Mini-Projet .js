@@ -208,3 +208,9 @@ function commissionTotale(){
     return total
 }
 
+function topVendeur(){
+    let vendeurs = utilisateurs.filter(u.role === "vendeur")
+    .sort((a,b) => b.note - a.note)
+    console.log(vendeur.slice(0.3));
+}
+
