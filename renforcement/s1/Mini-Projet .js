@@ -150,3 +150,30 @@ function acheter(acheteurId, annonceId){
         prix: annonce.prix
     })
 }
+
+
+let avis = []
+
+function noter(vendeurId, note){
+    avis.push({
+        vendeurId, note
+    })
+    let avisVendeur = avis.filter(a => a.venderId === vendeurId)
+
+    let total = 0
+    avisVendeur.forEach(a => {
+        total+= a.note
+    })
+    let moyenne = total / avisVendeur.length
+    let vendeur = utilisateurs.find(
+        u => u.id === vendeurId
+    )
+    vendeur.note = moyenne
+
+    console.log(
+
+    );
+    vendeur.pseudo,
+    vendeur.note,
+    avisVendeur
+}
