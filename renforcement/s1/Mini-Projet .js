@@ -169,11 +169,15 @@ function noter(vendeurId, note){
         u => u.id === vendeurId
     )
     vendeur.note = moyenne
-
+    let ventes = transactions.filter(
+        t => t.vendeur === vendeurId
+    )
     console.log(
 
     );
     vendeur.pseudo,
     vendeur.note,
-    avisVendeur
+    avisVendeur,
+    ventes.length
 }
+
