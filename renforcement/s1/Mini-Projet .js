@@ -145,9 +145,12 @@ function acheter(acheteurId, annonceId){
     annonce.statut = "vendu"
 
     transactions.push({
+        date: new Date,
         acheteurId, 
-        venderId: vendeur.id,
-        prix: annonce.prix
+        vendeurId: vendeur.id,
+        annonce : annonce.titre,
+        prix: annonce.prix,
+        commission : commission
     })
 }
 
