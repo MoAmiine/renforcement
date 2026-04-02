@@ -214,3 +214,14 @@ function topVendeur(){
     console.log(vendeur.slice(0.3));
 }
 
+function categoriePopulaire(){
+    let compteur = {}
+    annonces.forEach(a => {
+        if(!compteur[a.categorie]){
+            compteur[a.categorie] = 0
+        }
+        compteur[a.categorie]++
+    })
+    console.log(compteur)
+}
+
