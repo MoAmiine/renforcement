@@ -85,3 +85,39 @@ function retirerAnnonce(annonceId){
     console.log("annonce retire");
     
 }
+
+// test 
+publierAnnonce(
+1,
+"Iphone 11",
+"Très bon état",
+450,
+"Électronique",
+"très bon"
+)
+
+publierAnnonce(
+3,
+"Canapé",
+"Bon état",
+200,
+"Meuble",
+"bon"
+)
+
+publierAnnonce(
+5,
+"Vélo",
+"Neuf",
+300,
+"Sport",
+"neuf"
+)
+
+console.log(annonces)
+
+function rechercher(mot){
+    let resultat = annonces.filter(a => a.titre.includes(mot))
+
+    console.log(resultat)
+}
