@@ -200,3 +200,11 @@ function chiffreAffaires(){
     return total
 }
 
+function commissionTotale(){
+    let total = 0
+    transactions.forEach(t => {
+        total += t.commission
+    })
+    return total
+}
+
