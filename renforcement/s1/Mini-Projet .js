@@ -181,3 +181,14 @@ function noter(vendeurId, note){
     ventes.length
 }
 
+function statsAnnonces(){
+    let stats = {}
+    annonces.forEach(a => {
+        if(!stats[a.statut]){
+            stats[a.statut] = 0
+        }
+        stats[a.statut]++
+    })
+    console.log(stats)
+}
+
