@@ -192,3 +192,11 @@ function statsAnnonces(){
     console.log(stats)
 }
 
+function chiffreAffaires(){
+    let total = 0
+    transactions.forEach(t => {
+        total += t.montant
+    })
+    return total
+}
+
