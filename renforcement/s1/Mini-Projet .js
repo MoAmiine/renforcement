@@ -225,3 +225,21 @@ function categoriePopulaire(){
     console.log(compteur)
 }
 
+function prixMoyenCategorie(){
+    let categories = {}
+    annonces.forEach(a => {
+        if(!categories[a.categorie]){
+            categories[a.categorie] = {
+                total: 0,
+                count: 0
+            }
+        }
+        categories[a.categorie.total] += a.prix
+        categories[a.categorie].count++
+    })
+    for(let cat in categories){
+        let moyenne = categories[cat].total / categories[cat].count
+        console.log(cat, moyenne)
+    }
+}
+
